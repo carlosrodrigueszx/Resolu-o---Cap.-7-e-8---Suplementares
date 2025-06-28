@@ -1,0 +1,64 @@
+% Todas as linhas precedidas pelo simbolo '%' são comentários
+% e não afetam em nada o seu texto final.
+
+% IGNORE. Pacotes necessários e acessórios para o documento
+\documentclass[12pt]{article}
+\usepackage{amsthm}
+\usepackage{libertine}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsfonts}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage[brazil]{babel}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{fullpage}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usetikzlibrary{shapes.geometric, calc}
+% ---
+
+\newcommand{\quest}[1]{\section*{Questão #1}} % comando para "criar" uma questão
+\setlist[enumerate,1]{label=\textbf{\alph*)}} % faz com que o enumerate enumere em ordem alfabética por padrão.
+
+\begin{document}
+\begin{table}[]
+\centering
+\begin{tabular}{lc}
+\hline
+\textbf{Nome}                  & \textbf{Matrícula}\\
+Carlos Daniel Rodrigues        &  566429           \\
+Jones                          &                   \\
+Kleberson                      &                   \\
+Murilo Vitoriano Alves Fragoso & 570701            \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Cap. 7 - Exercícios complementares}
+\quest{47}
+$n = 48, \sum{x_i}= 387.8 \text{ e } \sum{x_i^2=4247.08}$ 
+\begin{enumerate}
+    \item $\overline{x} = \frac{\sum{x_i}}{n} = \frac{387.8}{48} = 8.08$\\
+          $s^2 = \frac{\sum{x_i^2} - \frac{\sum{x_i}^2}{n}}{n-1} = \frac{4247.08 - \frac{387.8^2}{48}}{47} = \frac{4247.08-3133.10}{47} = \frac{1114}{47} \approxeq 23.70$\\
+          $s = \sqrt{s^2} = \sqrt{23.70} \approxeq 4.87$\\
+          Considerando um nível de confiança de 95\%, temos que $\alpha = 0.05$, podemos fazer:
+          \begin{align*}
+              IC &= \overline{x} \pm Z_{\frac{0.05}{2}} \cdot \frac{s}{\sqrt{n}}\\
+                 &= 8.08 \pm 1.96 \cdot \frac{4.87}{\sqrt{48}}\\
+                 &\approxeq \left (6.702; 9.457 \right)
+          \end{align*}
+    \item Como há 13 valores que excedem 10, a proporção é dada por:\\
+    $\hat{p} \approxeq \frac{13}{48} = 0.271$\\
+    $\hat{q} = 1 - \hat{p} \approxeq 0.729$\\
+    Como queremos um IC de 95\%, temos que $\alpha = 0.05$, logo:
+    \begin{align*}
+        IC &= \hat{p} \pm Z_{0.05/2} \cdot \sqrt{\frac{\hat{p}\hat{q}}{n}}\\
+            &= 0.271 \pm 1.96 \cdot \sqrt{\frac{0.1975}{48}}\\
+            &\approxeq (0.145;0.397)
+    \end{align*}
+\end{enumerate}
+
+\quest{48}
+\end{document}
