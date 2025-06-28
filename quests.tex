@@ -61,4 +61,39 @@ $n = 48, \sum{x_i}= 387.8 \text{ e } \sum{x_i^2=4247.08}$
 \end{enumerate}
 
 \quest{48}
+Dados: $n=9$, $\bar{x}=188,0$, $s=7,2$. Intervalo de confiança de 98\%, logo $\alpha=0,02$.
+
+\begin{enumerate}
+    \item Como $n < 30$ e não conhecemos o desvio padrão populacional, usamos a distribuição $t$ de Student.
+    \item Graus de liberdade: $gl = n-1 = 9-1=8$.
+    \item Para $\alpha/2=0,01$ e $gl=8$, consultando a tabela temos:
+    \[
+    t_{0,01;8} \approx 2,896
+    \]
+    \item Calculamos o erro padrão:
+    \[
+    EP = \frac{s}{\sqrt{n}} = \frac{7,2}{\sqrt{9}} = \frac{7,2}{3} = 2,4
+    \]
+    \item Intervalo de confiança:
+    \begin{align*}
+        IC &= \bar{x} \pm t_{\alpha/2,gl} \cdot EP \\
+           &= 188,0 \pm 2,896 \cdot 2,4 \\
+           &= 188,0 \pm 6,95
+    \end{align*}
+    \item Assim, temos:
+    \[
+    \text{Limite inferior} = 188,0 - 6,95 = 181,05
+    \]
+    \[
+    \text{Limite superior} = 188,0 + 6,95 = 194,95
+    \]
+\end{enumerate}
+
+\textbf{Resposta final:}
+\[
+\boxed{(181,05 \;\;\text{até}\;\; 194,95)}
+\]
+
+Com 98\% de confiança, o índice cardíaco médio real dos triatletas durante a natação está entre aproximadamente 181,05 e 194,95 batimentos por minuto.
+
 \end{document}
