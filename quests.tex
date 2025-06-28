@@ -169,5 +169,76 @@ Dados: $n=18$ e as observações (ordenadas) são:
     
 \end{enumerate}
 
+\quest{50}
+
+Foi dado um IC de 95\% para a frequência natural média real:
+\[
+(229,764 ; \; 233,504)
+\]
+e tamanho da amostra $n=5$.
+
+\begin{enumerate}
+    \item \textbf{Encontrando a média amostral:}
+    \[
+    \bar{x} = \frac{229,764 + 233,504}{2} = 231,634
+    \]
+    
+    \item \textbf{Amplitude e erro máximo no IC de 95\%:}
+    \[
+    \text{Amplitude} = 233,504 - 229,764 = 3,74
+    \]
+    \[
+    E_{95\%} = \frac{3,74}{2} = 1,87
+    \]
+    
+    \item \textbf{Usando o valor crítico de $t$ para 95\% para encontrar $s$:}
+    
+    Graus de liberdade: $gl = n - 1 = 4$
+    
+    \[
+    t_{0,025;4} \approx 2,776
+    \]
+    
+    O erro máximo é dado por:
+    \[
+    E_{95\%} = t_{0,025;4} \cdot \frac{s}{\sqrt{n}}
+    \]
+    \[
+    1,87 = 2,776 \cdot \frac{s}{\sqrt{5}}
+    \]
+    \[
+    \frac{s}{\sqrt{5}} = \frac{1,87}{2,776} \approx 0,6737
+    \]
+    \[
+    s = 0,6737 \cdot \sqrt{5} \approx 0,6737 \cdot 2,236 \approx 1,506
+    \]
+    
+    \item \textbf{Calculando o novo IC de 99\%:}
+    
+    Nível de confiança 99\% $\rightarrow \alpha=0,01$, logo $\alpha/2=0,005$.
+    
+    \[
+    t_{0,005;4} \approx 4,604
+    \]
+    
+    Erro máximo:
+    \[
+    E_{99\%} = t_{0,005;4} \cdot \frac{s}{\sqrt{5}} = 4,604 \cdot 0,6737 \approx 3,10
+    \]
+    
+    \item \textbf{Intervalo de confiança de 99\%:}
+    \[
+    IC_{99\%} = \bar{x} \pm 3,10 = 231,634 \pm 3,10
+    \]
+    \[
+    = (228,534 ; \; 234,734)
+    \]
+\end{enumerate}
+
+\textbf{Resposta final:}
+\[
+\boxed{(228,534 \;\text{até}\; 234,734)}
+\]
+
 
 \end{document}
