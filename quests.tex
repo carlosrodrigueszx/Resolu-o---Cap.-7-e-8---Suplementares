@@ -96,4 +96,78 @@ Dados: $n=9$, $\bar{x}=188,0$, $s=7,2$. Intervalo de confiança de 98\%, logo $\
 
 Com 98\% de confiança, o índice cardíaco médio real dos triatletas durante a natação está entre aproximadamente 181,05 e 194,95 batimentos por minuto.
 
+\quest{49}
+
+Dados: $n=18$ e as observações (ordenadas) são:
+\[
+22,0, 23,5, 31,5, 32,5, 33,5, 34,0, 35,7, 36,4, 37,2, 39,3, 41,4, 42,5, 44,5, 45,6, 46,7, 46,9, 51,2, 51,5
+\]
+
+\begin{enumerate}
+    \item \textbf{Boxplot e comentários:}
+    
+    \begin{itemize}
+        \item Primeiro quartil: $Q_1 = 33,5$
+        \item Mediana: $Q_2 = 38,25$
+        \item Terceiro quartil: $Q_3 = 45,6$
+        \item Intervalo interquartil: $IQR = Q_3 - Q_1 = 12,1$
+        \item Limites para outliers:
+        \[
+        LI = Q_1 - 1,5 \times IQR = 33,5 - 18,15 = 15,35
+        \]
+        \[
+        LS = Q_3 + 1,5 \times IQR = 45,6 + 18,15 = 63,75
+        \]
+        \item Não há valores fora desses limites, portanto sem outliers.
+        \item Comentário: Parece haver uma ligeira inclinação positiva na metade do meio da amostra, mas as suíças inferiores são mais longas do que as superiores. A extensão da variabilidade é muito substancial, embora não haja outliers.
+    \end{itemize}
+    
+    \item \textbf{Normalidade:}
+    
+    A partir da marcação de probabilidade normal, o padrão dos pontos é razoavelmente linear, indicando que é plausível que a amostra venha de uma distribuição normal.
+    
+    \item \textbf{Intervalo de confiança de 98\% para a média:}
+    
+    Calculamos a média amostral:
+    \[
+    \bar{x} = \frac{\sum x_i}{n} = \frac{695,9}{18} \approx 38,66
+    \]
+    
+    Calculamos o desvio padrão amostral:
+    \[
+    s = \sqrt{\frac{\sum x_i^2 - \frac{\left(\sum x_i\right)^2}{n}}{n-1}} = \sqrt{\frac{28123,59 - \frac{(695,9)^2}{18}}{17}} \approx 8,46
+    \]
+    
+    Graus de liberdade:
+    \[
+    gl = n - 1 = 17
+    \]
+    
+    Valor crítico da distribuição $t$ para 98\% e $gl=17$:
+    \[
+    t_{0,01;17} \approx 2,567
+    \]
+    
+    Erro padrão da média:
+    \[
+    EP = \frac{s}{\sqrt{n}} = \frac{8,46}{\sqrt{18}} \approx 1,993
+    \]
+    
+    Construção do intervalo de confiança:
+    \[
+    IC = \bar{x} \pm t_{0,01;17} \times EP = 38,66 \pm 2,567 \times 1,993 = 38,66 \pm 5,11
+    \]
+    
+    \[
+    IC = (33,55; \; 43,77)
+    \]
+    
+    \textbf{Resposta final:}
+    \[
+    (33,53; \; 43,79)
+    \]
+    
+\end{enumerate}
+
+
 \end{document}
