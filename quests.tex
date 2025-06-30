@@ -343,7 +343,6 @@ Arredondando para cima, temos:
 
 \textbf{Resposta final:} Devem ser testados 246 livros para garantir essa margem de erro com 95\% de confiança.
 
-
 \quest{56}
 
 \begin{enumerate}
@@ -406,7 +405,6 @@ Arredondando para cima, temos:
     P(\min(X_i) < \tilde{\mu} < \max(X_i)) = 1 - (1/2)^{n-1}.
     \]
     
-    ---
     
     \item[b.] Temos \(n=6\) valores: 2,84; 3,54; 2,80; 1,44; 2,94; 2,70.
     
@@ -421,8 +419,6 @@ Arredondando para cima, temos:
     \]
     
     Isso porque \(\alpha = (1/2)^{n-1} = (1/2)^5 = 0,03125 \approx 3\%\), logo, \(1-\alpha \approx 97\%\).
-    
-    ---
     
     \item[c.] Queremos o coeficiente de confiança do intervalo \((x_{(2)}, x_{(n-1)})\), isto é, do segundo menor ao segundo maior:
     
@@ -490,8 +486,6 @@ A amplitude do intervalo é:
 w = s \cdot \frac{z_{\gamma} + z_{\alpha - \gamma}}{\sqrt{n}}.
 \]
 
----
-
 \textbf{Queremos mostrar que \(w\) é minimizado para \(\gamma = \alpha/2\).}
 
 \begin{enumerate}
@@ -544,6 +538,29 @@ w = s \cdot \frac{z_{\gamma} + z_{\alpha - \gamma}}{\sqrt{n}}.
     \item Logo, o intervalo simétrico (quando \(\gamma=\alpha/2\)) é o que minimiza a amplitude \(w\).
 \end{enumerate}
 
+\quest{61}
+
+Temos os dados do Exercício 45:
+\[
+69{,}5;\; 71{,}9;\; 72{,}6;\; 73{,}1;\; 73{,}3;\; 73{,}5;\; 75{,}5;\; 75{,}7;\; 75{,}8;\; 76{,}1;\; 76{,}2;\; 76{,}2;\; 77{,}0;\; 77{,}9;\; 78{,}1;\; 79{,}6;\; 79{,}7;\; 79{,}9;\; 80{,}1;\; 82{,}2;\; 83{,}7;\; 93{,}7.
+\]
+Tamanho da amostra: \(n=22\).
+
+\textbf{Intervalo de confiança robusto de 95\% para a média da população (ponto de simetria):}
+
+\[
+(73,6;\; 78,8)
+\]
+
+\textbf{Intervalo de confiança de 95\% usando o valor crítico de \(t\) apropriado para a distribuição normal:}
+
+\[
+(75,1;\; 79,6)
+\]
+
+\textbf{Conclusão:} O IC robusto é um pouco mais largo, refletindo a robustez contra caudas longas, enquanto o IC usando \(t\) é um pouco mais estreito.
+
+
 \quest{62}
 
 \begin{enumerate}
@@ -595,14 +612,11 @@ w = s \cdot \frac{z_{\gamma} + z_{\alpha - \gamma}}{\sqrt{n}}.
     \]
     
     Portanto, o limite inferior de 95\% para a probabilidade de o tempo de quebra exceder 100 minutos é aproximadamente \(0,313\).
+    Portanto, o menor intervalo de confiança (mais curto) ocorre exatamente quando ele é simétrico em torno de \(\overline{x}\).
 \end{enumerate}
 
 
-
-
 \section{Cap. 8 - Exercícios complementares}
-
-Portanto, o menor intervalo de confiança (mais curto) ocorre exatamente quando ele é simétrico em torno de \(\overline{x}\).
 
 \quest{61}
 
@@ -882,7 +896,6 @@ Resposta final:
 \[
 \boxed{\text{Sim, h\'a forte evid\^encia de que a propor\c{c}\~ao < 0{,}75 ($p \approx 0{,}00054$)}}
 \]
-
 
 \quest{76}
 
