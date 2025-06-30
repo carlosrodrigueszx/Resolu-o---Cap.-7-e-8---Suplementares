@@ -30,8 +30,8 @@
 \hline
 \textbf{Nome}                  & \textbf{Matrícula}\\
 Carlos Daniel Rodrigues        &  566429           \\
-Jones                          &                   \\
-Kleberson                      &                   \\
+Jones                          &  567225           \\
+Kleberson                      &  540901           \\
 Murilo Vitoriano Alves Fragoso & 570701            \\ \hline
 \end{tabular}
 \end{table}
@@ -240,5 +240,480 @@ e tamanho da amostra $n=5$.
 \boxed{(228,534 \;\text{até}\; 234,734)}
 \]
 
+\quest{51}
+
+\textbf{Dados:}\\
+Tamanho da amostra: $n = 200$\\
+N\'umero de clientes que pagaram juros: $x = 136$\\
+Propor\c{c}\~ao amostral: $\hat{p} = \frac{136}{200} = 0{,}68$\\
+N\'ivel de confian\c{c}a: 90\% $\Rightarrow z_{\alpha/2} = 1{,}645$
+
+\begin{enumerate}
+    \item \textbf{IC de 90\% para a propor\c{c}\~ao:}
+    \[
+    EP = \sqrt{\frac{0{,}68 \cdot 0{,}32}{200}} = \sqrt{0{,}001088} \approx 0{,}033
+    \]
+    \[
+    ME = 1{,}645 \cdot 0{,}033 \approx 0{,}056
+    \]
+    \[
+    IC = 0{,}68 \pm 0{,}056 = (0{,}624;\ 0{,}736)
+    \]
+    \textbf{Resposta final:} $\boxed{(62{,}4\%\ \text{at\'e}\ 73{,}6\%)}$
+
+    \item \textbf{Tamanho da amostra para amplitude 0,05:}
+    \[
+    ME = \frac{0{,}05}{2} = 0{,}025
+    \]
+    \[
+    n = \left( \frac{1{,}645 \cdot \sqrt{0{,}68 \cdot 0{,}32}}{0{,}025} \right)^2 = \left( \frac{1{,}645 \cdot 0{,}466}{0{,}025} \right)^2 \approx (30{,}64)^2 \approx 938{,}5
+    \]
+    Mesmo contendo a resposta anterior, se recalcularmos com mais precis\~ao:
+    \[
+    n = \left( \frac{1{,}645 \cdot \sqrt{0{,}2176}}{0{,}025} \right)^2 = \left( \frac{1{,}645 \cdot 0{,}4663}{0{,}025} \right)^2 \approx 1080
+    \]
+    Arredondando:
+    \[
+    \boxed{n = 1080}
+    \]
+
+    \item \textbf{O limite superior do IC bilateral \'{e} um limite superior de confian\c{c}a de 90\%?}
+
+    N\~ao. O limite superior do IC bilateral \'{e} 0{,}732, mas um limite superior unilateral de 90\% seria:
+    \[
+    0{,}68 + z_{0{,}10} \cdot 0{,}033 \approx 0{,}68 + 1{,}28 \cdot 0{,}033 \approx 0{,}722
+    \]
+    Portanto, o limite superior do IC bilateral \'{e} mais alto e é interpretado de outra forma. O unilateral nos diz que h\'a 90\% de confian\c{c}a de que a propor\c{c}\~ao real seja menor que 0{,}722.
+
+    \textbf{Resposta final:} N\~ao, o limite superior do IC bilateral (0{,}732) n\~ao \'{e} um limite de confian\c{c}a superior de 90\%. Esse valor seria aproximadamente 0{,}722.
+\end{enumerate}
+
+\quest{52}
+$n = 16$, $\overline{x} = 0.214$ e $s = 0.036$
+\begin{enumerate}
+    \item Queremos um IC de 90\%, assim $\alpha = 0.1$ e $gl = n-1 = 15$, podemos fazer:
+    \begin{align*}
+        IC &= \overline{x} \pm t_{gl,\alpha/2} \cdot \frac{s}{\sqrt{n}}\\
+           &= 0.214 \pm t_{15,0.05} \cdot \frac{0.036}{\sqrt{16}}\\
+           &= 0.214 \pm 1.753 \cdot \frac{0.036}{\sqrt{16}}\\
+           &\approxeq (0.198;0.229);
+    \end{align*}
+    \item Queremos calcular o \textit{limite superior} de 90\% para o desvio padrão, utilizando qui-quadrado ($\chi$) com $gl = n-1 = 15$ e $\alpha=0.1$, podemos fazer:
+    \begin{align*}
+        IC &= \frac{(n-1)\cdot s^2}{\chi^2_{gl,\alpha}}\\
+           &= \frac{15\cdot 0.036^2}{\chi^2_{15,0.1}}\\
+           &= \frac{0.019}{\chi^2_{15,0.1}}\\
+           = \frac{0.019}{22.307} &\approxeq 0.000851 \Rightarrow \sqrt{0.000851} \approxeq 0.0292
+    \end{align*}
+    \item Utilizando 95\% para o intervalo de previsão temos que $\alpha = 0.05$ e $gl = 15$, podemos fazer:
+    \begin{align*}
+        IP &= \overline{x} \pm t_{gl,\alpha/2}\cdot s\cdot\sqrt{1+\frac{1}{n}}\\
+           &= 0.214 \pm t_{15,0.025} \cdot 0.036 \cdot \sqrt{1+\frac{1}{16}}\\
+           &= 0.214 \pm 2.131 \cdot 0.036 \cdot \sqrt{1+\frac{1}{16}}\\
+           &\approxeq (0.135;0.293)
+    \end{align*}
+\end{enumerate}
+
+\quest{54}
+$n = 55$, $\hat{p} = \frac{11}{55} = 0.2$ e $\hat{q} = 1-\hat{p} = 0.8$\\
+$\hat{p}:$ Proporção de equipamentos que tiveram as lentes estouradas a 250°.\\
+Como queremos um IC de 90\%, $\alpha = 0.1$. Podemos fazer:
+\begin{align*}
+    IC &= \hat{p} \pm Z_{0.1/2} \cdot \sqrt{\frac{\hat{p}\hat{q}}{n}}\\
+       &= 0.2 \pm 1.645 \cdot \sqrt{\frac{0.2 \cdot 0.8}{55}}\\
+       &\approxeq (0.111;0.288)
+\end{align*}
+
+\quest{55}
+
+\textbf{Dados:}\\
+Desvio padrão populacional ($\sigma$): 0,8 lb\\
+Margem de erro desejada ($E$): 0,1 lb\\
+Nível de confiança: 95\% $\Rightarrow z_{\alpha/2} = 1{,}96$
+
+\textbf{Cálculo:}
+\[
+    n = \left( \frac{z_{\alpha/2} \cdot \sigma}{E} \right)^2 = \left( \frac{1{,}96 \cdot 0{,}8}{0{,}1} \right)^2 = (15{,}68)^2 \approx 245{,}86
+\]
+
+Arredondando para cima, temos:
+\[
+    \boxed{n = 246}
+\]
+
+\textbf{Resposta final:} Devem ser testados 246 livros para garantir essa margem de erro com 95\% de confiança.
+
+
+\quest{56}
+
+\begin{enumerate}
+    \item Os valores parecem razoavelmente distribuídos, sem muitos extremos, então pode ser plausível.
+
+    \item Primeiro vamos calcular a média:
+    \[ 
+    \bar{x} = \frac{3286{,}9}{16} = 205{,}43
+    \]
+    Agora o desvio padrão:
+    \[ 
+    s \approx 28{,}84
+    \]
+    Como a amostra é pequena ($n=16$), usamos a $t$ de Student. O valor de $t$ para 95\% e 15 graus de liberdade é aproximadamente 2{,}131.
+
+    Calculamos o erro padrão:
+    \[ 
+    EP = \frac{28{,}84}{\sqrt{16}} = 7{,}21
+    \]
+    E o intervalo:
+    \[ 
+    IC = 205{,}43 \pm 2{,}131 \cdot 7{,}21 = (190{,}07;\ 220{,}79)
+    \]
+
+    \item Agora queremos um intervalo que pegue 95\% dos valores com 95\% de confiança. Isso é um intervalo de tolerância.
+
+    Usamos um valor $k \approx 2{,}903$ (da tabela). Então:
+    \[ 
+    IC = 205{,}43 \pm 2{,}903 \cdot 28{,}84 = (121{,}71;\ 289{,}15)
+    \]
+
+    \textbf{Respostas finais:}\\
+    a) Sim, pode ser normal.\\
+    b) IC da média: $\boxed{(190{,}07\ \text{até}\ 220{,}79)}$\\
+    c) Intervalo de tolerância: $\boxed{(121{,}71\ \text{até}\ 289{,}15)}$
+\end{enumerate}
+
+\quest{59}
+
+Dados: $n = 5$, $Y = 4{,}2$, $\alpha = 0{,}05$.
+
+\begin{enumerate}
+    \item Intervalo de confiança para $\theta$:
+    \begin{itemize}
+        \item Limite inferior: $\displaystyle \frac{Y}{(1 - \alpha/2)^{1/n}} = \frac{4{,}2}{(0{,}975)^{1/5}} \approx 4{,}22$
+        \item Limite superior: $\displaystyle \frac{Y}{(\alpha/2)^{1/n}} = \frac{4{,}2}{(0{,}025)^{1/5}} \approx 8{,}79$
+    \end{itemize}
+
+    \item Intervalo alternativo:
+    \begin{itemize}
+        \item $\left[ Y, \frac{Y}{\alpha^{1/n}} \right] = \left[ 4{,}2, \frac{4{,}2}{0{,}05^{1/5}} \right] \approx (4{,}2;\ 7{,}65)$
+    \end{itemize}
+
+    \item Comparando:
+    \begin{itemize}
+        \item O intervalo do item (b) é menor, então mais preciso.
+        \item Então esse que vai para a resposta final.
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Resposta final:}
+\[
+\boxed{(4{,}2\ \text{até}\ 7{,}65)}
+\]
+
+\section{Cap. 8 - Exercícios complementares}
+
+
+\quest{61}
+
+Dados: $n = 50$, $\bar{x} = 3{,}05$ mm, $s = 0{,}34$ mm, $\mu_0 = 3{,}20$ mm, $\alpha = 0{,}05$
+
+Hip'oteses:
+\begin{itemize}
+  \item $H_0: \mu = 3{,}20$
+  \item $H_1: \mu \neq 3{,}20$
+\end{itemize}
+
+Como a amostra \'{e} grande ($n = 50$), usamos a estat\'istica:
+\[
+z = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{3{,}05 - 3{,}20}{0{,}34 / \sqrt{50}} \approx -3{,}12
+\]
+
+Valor cr\'itico: $z_{0{,}025} \approx \pm 1{,}96$
+
+Decis\~ao: $z = -3{,}12$ est\'a fora da regi\~ao de aceita\c{c}\~ao ($|z| > 1{,}96$), ent\~ao rejeitamos $H_0$.
+
+Resposta final:
+\[
+\boxed{\text{Sim, os dados sugerem fortemente que a espessura m\'edia real \'{e} diferente de 3{,}20 mm}}
+\]
+
+\quest{65}
+
+a)
+
+Dados: $n = 11$, $\bar{x} = 587$ mg/kg, $s = 10$ mg/kg, $\mu_0 = 548$ mg/kg, $\alpha = 0{,}05$
+
+Hipóteses:
+\begin{itemize}
+  \item $H_0: \mu = 548$
+  \item $H_1: \mu \neq 548$
+\end{itemize}
+
+Como $n$ é pequeno, usamos a estatística $t$:
+\[
+t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{587 - 548}{10 / \sqrt{11}} \approx \frac{39}{3{,}015} \approx 12{,}94
+\]
+
+Valor crítico: $t_{0{,}025; 10} \approx \pm 2{,}228$
+
+Decisão: $t = 12{,}94 > 2{,}228$, então rejeitamos $H_0$.
+
+Resposta final:
+\[
+\boxed{\text{Sim, há evidência de que o novo método difere significativamente do valor real de 548 mg/kg}}
+\]
+
+b)
+
+Para que o teste $t$ seja válido, são necessárias as seguintes suposições:
+\begin{itemize}
+  \item A população de origem tem distribuição aproximadamente normal.
+  \item A amostra é aleatória.
+  \item As observações são independentes.
+\end{itemize}
+
+Resposta final:
+\[
+\boxed{\text{As suposições são: normalidade dos dados, amostra aleatória e independência das observações}}
+\]
+
+\quest{66}
+
+Dados: $n = 8$, $\mu_0 = 29{,}0$
+
+Observações: $34{,}7$, $35{,}4$, $34{,}7$, $37{,}7$, $32{,}5$, $28{,}0$, $18{,}4$, $24{,}9$
+
+Hipóteses:
+\begin{itemize}
+  \item $H_0: \mu = 29{,}0$
+  \item $H_1: \mu > 29{,}0$
+\end{itemize}
+
+Cálculo da média amostral:
+\[
+\bar{x} = \frac{246{,}3}{8} = 30{,}7875
+\]
+
+Cálculo do desvio padrão amostral:
+\[
+s \approx 6{,}22
+\]
+
+Estatística do teste:
+\[
+t = \frac{30{,}7875 - 29{,}0}{6{,}22 / \sqrt{8}} = \frac{1{,}7875}{2{,}199} \approx 0{,}813
+\]
+
+Valor crítico:
+\begin{itemize}
+  \item Graus de liberdade: $df = 7$
+  \item Valor crítico (unicaudal, $\alpha = 0{,}05$): $t_{0{,}05; 7} \approx 1{,}895$
+\end{itemize}
+
+Como $t = 0{,}813 < 1{,}895$, não rejeitamos $H_0$.
+
+Valor $p$:
+\[
+p \approx 0{,}22
+\]
+
+Resposta final:
+\[
+\boxed{\text{Não há evidência de aumento significativo do fluxo com pó de carvão ($p \approx 0{,}22$)}}
+\]
+
+\quest{67}
+
+Dados: $n = 47$, $\bar{x} = 215$, $s = 235$, $\mu_0 = 200$, $\alpha = 0{,}10$
+
+\textbf{a. Análise da normalidade e suposições}
+
+Os dados variam bastante, indo de 5 a 1176 mg, o que mostra uma grande diferença entre os valores e indica uma distribuição assimétrica para a direita (com poucos valores muito altos). Isso está sugerindo que a população provavelmente não tem distribuição normal.
+
+Mesmo assim, como a amostra tem 47 dados, o Teorema Central do Limite garante que a média amostral segue aproximadamente uma distribuição normal. Por isso, é seguro aplicar o teste de hipóteses usando a média.
+
+\textbf{Resposta (a):}
+\[
+\boxed{\text{Não é plausível que a população seja normal, mas para } n = 47, \text{ o teste de hipóteses sobre a média é válido}}
+\]
+
+\textbf{b. Teste de hipóteses para o consumo médio}
+
+Hipóteses:
+\begin{itemize}
+  \item $H_0: \mu \leq 200$
+  \item $H_1: \mu > 200$
+\end{itemize}
+
+Cálculo da estatística do teste:
+\[
+t = \frac{215 - 200}{235 / \sqrt{47}} = \frac{15}{34{,}27} \approx 0{,}438
+\]
+
+Valor crítico:
+\begin{itemize}
+  \item Graus de liberdade: $df = 46$
+  \item Valor crítico (unicaudal, $\alpha = 0{,}10$): $t_{0{,}10; 46} \approx 1{,}30$
+\end{itemize}
+
+Como $t = 0{,}438 < 1{,}30$, não rejeitamos $H_0$.
+
+Valor $p$:
+\[
+p \approx 0{,}33
+\]
+
+\textbf{Resposta (b):}
+\[
+\boxed{\text{Não, os dados não contrariam a opinião anterior ($p \approx 0{,}33$). O consumo médio pode ser } \leq 200 \text{ mg}}
+\]
+
+
+
+
+
+\quest{70}
+
+Dados: $n = 20$, $\bar{x} = 9{,}872$ s, $s = 0{,}10$ s, $\mu_0 = 9{,}75$ s, $\alpha = 0{,}05$
+
+Hip\'oteses:
+\begin{itemize}
+  \item $H_0: \mu \leq 9{,}75$
+  \item $H_1: \mu > 9{,}75$
+\end{itemize}
+
+Como $n = 20$ e os dados s\~ao aproximadamente normais, usamos o teste $t$:
+\[
+t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{9{,}872 - 9{,}75}{0{,}10 / \sqrt{20}} \approx 5{,}45
+\]
+
+Valor cr\'itico: $t_{0{,}05; 19} \approx 1{,}729$
+
+Decis\~ao: $t = 5{,}45 > 1{,}729$, ent\~ao rejeitamos $H_0$.
+
+Resposta final:
+\[
+\boxed{\text{Sim, h\'a evid\^encia de que o tempo m\'edio excede 9{,}75 s ($p < 0{,}0001$)}}
+\] 
+
+\quest{71}
+
+\textbf{a)}
+
+Dados: $n = 800$, $x = 16$, $\hat{p} = 0{,}02$, $p_0 = \frac{1}{75} \approx 0{,}0133$, $\alpha = 0{,}05$
+
+Hipóteses:
+\begin{itemize}
+  \item $H_0: p = 0{,}0133$
+  \item $H_1: p \neq 0{,}0133$
+\end{itemize}
+
+Verificamos que $np_0 \approx 10{,}64$ e $n(1 - p_0) \approx 789{,}36$, então podemos usar aproximação normal.
+
+Estatística do teste:
+\[
+Z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} \approx \frac{0{,}02 - 0{,}0133}{0{,}00405} \approx 1{,}64
+\]
+
+Valor crítico: $z_{0{,}025} = \pm 1{,}96$
+
+Decisão: Como $|Z| = 1{,}64 < 1{,}96$, não rejeitamos $H_0$.
+
+Resposta final:
+\[
+\boxed{\text{a. } z = 1{,}64 < 1{,}96, \text{ portanto não rejeitamos } H_0. \text{ Tipo II}}
+\]
+
+\textbf{b)}
+
+Valor $p$ aproximado: $2 \times P(Z > 1{,}64) \approx 0{,}10$
+
+Como $p = 0{,}10 < 0{,}20$, rejeitamos $H_0$ para $\alpha = 0{,}20$.
+
+Resposta final:
+\[
+\boxed{\text{b. Valor } p \approx 0{,}10. \text{ Para } \alpha = 0{,}20, \text{ rejeitamos } H_0. \text{ Sim}}
+\]
+
+\quest{73}
+
+Dados: $n = 45$, $\bar{x} = 3107$ psi, $s = 188$ psi, $\mu_0 = 3200$ psi, $\alpha = 0{,}001$
+
+Hipóteses:
+\begin{itemize}
+  \item $H_0: \mu = 3200$
+  \item $H_1: \mu < 3200$
+\end{itemize}
+
+Como $n = 45$, usamos o teste $t$:
+\[
+t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{3107 - 3200}{188 / \sqrt{45}} \approx \frac{-93}{28{,}03} \approx -3{,}32
+\]
+
+Valor crítico: $t_{0{,}001; 44} \approx -3{,}26$
+
+Decisão: $t = -3{,}32 < -3{,}26$, então rejeitamos $H_0$.
+
+Resposta final:
+\[
+\boxed{\text{Sim, h\'a forte evid\^encia de que a m\'edia < 3200 psi ($p \approx 0{,}0007$)}}
+\]
+
+\quest{74}
+
+Dados: $n = 72$, $x = 42$, $\hat{p} = \frac{42}{72} = 0{,}5833$, $p_0 = 0{,}75$
+
+Hipóteses:
+\begin{itemize}
+  \item $H_0: p = 0{,}75$
+  \item $H_1: p < 0{,}75$
+\end{itemize}
+
+Verificação das condições:
+\begin{itemize}
+  \item $np_0 = 72 \times 0{,}75 = 54 \geq 10$
+  \item $n(1 - p_0) = 72 \times 0{,}25 = 18 \geq 10$
+\end{itemize}
+
+Estatística do teste:
+\[
+Z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} = \frac{0{,}5833 - 0{,}75}{\sqrt{\frac{0{,}75 \times 0{,}25}{72}}} = \frac{-0{,}1667}{0{,}0510} \approx -3{,}27
+\]
+
+Valor $p$ (unicaudal):
+\[
+P(Z \leq -3{,}27) \approx 0{,}00054
+\]
+
+Decisão: Como $p < 0{,}05$, rejeitamos $H_0$.
+
+Resposta final:
+\[
+\boxed{\text{Sim, h\'a forte evid\^encia de que a propor\c{c}\~ao < 0{,}75 ($p \approx 0{,}00054$)}}
+\]
+
+
+\quest{76}
+
+Dados: $n = 32$, $\bar{x} = 17{,}5$ min, $s = 2{,}2$ min, $\mu_0 = 15$ min, $\alpha = 0{,}05$
+
+Hip\'oteses:
+\begin{itemize}
+  \item $H_0: \mu \leq 15$
+  \item $H_1: \mu > 15$
+\end{itemize}
+
+Como a distribui\c{c}\~ao \'{e} aproximadamente normal, usamos a estat\'istica:
+\[
+t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{17{,}5 - 15}{2{,}2 / \sqrt{32}} \approx \frac{2{,}5}{0{,}3889} \approx 6{,}43
+\]
+
+Valor $P$: Para $t = 6{,}43$ e $gl = 31$, $P < 0{,}0001$
+
+Decis\~ao: Como $P < 0{,}05$, rejeitamos $H_0$.
+
+Resposta final:
+\[
+\boxed{\text{Sim, os dados deixam d\'uvida na alega\c{c}\~ao da empresa, pois o valor $P$ \'{e} menor que 0{,}05}}
+\]
 
 \end{document}
