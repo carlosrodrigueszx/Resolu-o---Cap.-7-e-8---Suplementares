@@ -28,11 +28,11 @@
 \centering
 \begin{tabular}{lc}
 \hline
-\textbf{Nome}                  & \textbf{Matrícula}\\
-Carlos Daniel Rodrigues        &  566429           \\
-Jones                          &  567225           \\
-Kleberson                      &  540901           \\
-Murilo Vitoriano Alves Fragoso & 570701            \\ \hline
+\textbf{Nome}                  & \textbf{Matrícula} \\
+Carlos Daniel Rodrigues        &  566429            \\
+Jones                          &  567225            \\
+Kleberson                      &  540901            \\
+Murilo Vitoriano Alves Fragoso &  570701            \\ \hline
 \end{tabular}
 \end{table}
 
@@ -381,6 +381,75 @@ Arredondando para cima, temos:
     c) Intervalo de tolerância: $\boxed{(121{,}71\ \text{até}\ 289{,}15)}$
 \end{enumerate}
 
+\quest{58}
+
+\begin{enumerate}
+    \item[a.] Queremos mostrar que:
+    \[
+    P(\min(X_i) < \tilde{\mu} < \max(X_i)) = 1 - \left(\frac12\right)^{n-1}
+    \]
+    
+    \textbf{Demonstração:}
+    
+    Como a mediana \(\tilde{\mu}\) é tal que \(P(X_i \leq \tilde{\mu})=0,5\) e \(P(X_i \geq \tilde{\mu})=0,5\), o complemento do evento \(\{\min(X_i) < \tilde{\mu} < \max(X_i)\}\) é que todos os valores \(X_i\) sejam:
+    \[
+    \text{todos } \leq \tilde{\mu} \quad \text{ou todos } \geq \tilde{\mu}.
+    \]
+    
+    Cada um desses eventos tem probabilidade \((1/2)^n\), e como são mutuamente exclusivos:
+    \[
+    P(\text{complemento}) = 2 \cdot (1/2)^n.
+    \]
+    
+    Pela sugestão dada, consideramos que quando todos os \(X_i\) forem iguais a \(\tilde{\mu}\) a probabilidade é zero (distribuição contínua). Então:
+    \[
+    P(\min(X_i) < \tilde{\mu} < \max(X_i)) = 1 - (1/2)^{n-1}.
+    \]
+    
+    ---
+    
+    \item[b.] Temos \(n=6\) valores: 2,84; 3,54; 2,80; 1,44; 2,94; 2,70.
+    
+    Ordenando:
+    \[
+    1,44 < 2,70 < 2,80 < 2,84 < 2,94 < 3,54.
+    \]
+    
+    O IC de 97\% é dado por:
+    \[
+    (\min(X_i), \max(X_i)) = (1,44; 3,54).
+    \]
+    
+    Isso porque \(\alpha = (1/2)^{n-1} = (1/2)^5 = 0,03125 \approx 3\%\), logo, \(1-\alpha \approx 97\%\).
+    
+    ---
+    
+    \item[c.] Queremos o coeficiente de confiança do intervalo \((x_{(2)}, x_{(n-1)})\), isto é, do segundo menor ao segundo maior:
+    
+    \[
+    x_{(2)}=2,70 \quad\text{e}\quad x_{(5)}=2,94.
+    \]
+    
+    O coeficiente de confiança é:
+    \[
+    1 - 2 \cdot \sum_{j=0}^{1} \binom{6}{j} (0,5)^6.
+    \]
+    
+    Calculando:
+    \[
+    \binom{6}{0}=1,\quad \binom{6}{1}=6,\quad \text{soma}=7.
+    \]
+    \[
+    2 \cdot 7 \cdot (1/64) = \frac{14}{64} \approx 0,21875.
+    \]
+    \[
+    1 - 0,21875 = 0,78125 \approx 78\%.
+    \]
+    
+    Assim, o intervalo \((2,70; 2,94)\) tem coeficiente de confiança de aproximadamente 78\%.
+\end{enumerate}
+
+
 \quest{59}
 
 Dados: $n = 5$, $Y = 4{,}2$, $\alpha = 0{,}05$.
@@ -409,8 +478,131 @@ Dados: $n = 5$, $Y = 4{,}2$, $\alpha = 0{,}05$.
 \boxed{(4{,}2\ \text{até}\ 7{,}65)}
 \]
 
+\quest{60}
+
+Seja \(0 \leq \gamma \leq \alpha\). O intervalo de confiança de \(100(1-\alpha)\%\) para \(\mu\) com grande \(n\) é:
+\[
+\left(\overline{x} - z_{\gamma} \cdot \frac{s}{\sqrt{n}}, \;\; \overline{x} + z_{\alpha - \gamma} \cdot \frac{s}{\sqrt{n}}\right).
+\]
+
+A amplitude do intervalo é:
+\[
+w = s \cdot \frac{z_{\gamma} + z_{\alpha - \gamma}}{\sqrt{n}}.
+\]
+
+---
+
+\textbf{Queremos mostrar que \(w\) é minimizado para \(\gamma = \alpha/2\).}
+
+\begin{enumerate}
+    \item Pela definição:
+    \[
+    \Phi(z_{\gamma}) = 1 - \gamma 
+    \quad\Rightarrow\quad
+    z_{\gamma} = \Phi^{-1}(1 - \gamma).
+    \]
+    De modo análogo:
+    \[
+    z_{\alpha - \gamma} = \Phi^{-1}(1 - (\alpha - \gamma)) = \Phi^{-1}(1 - \alpha + \gamma).
+    \]
+    
+    \item A amplitude do intervalo depende de:
+    \[
+    f(\gamma) = z_{\gamma} + z_{\alpha - \gamma}.
+    \]
+    
+    \item Como \(\Phi\) é função crescente, sua inversa também, e usando a sugestão:
+    \[
+    \frac{d}{d\gamma} \Phi^{-1}(y) = \frac{1}{\Phi'(\Phi^{-1}(y))}.
+    \]
+    
+    \item Calculamos a derivada:
+    \[
+    f'(\gamma) = z_{\gamma}' + z_{\alpha - \gamma}'.
+    \]
+    \[
+    = \frac{-1}{\phi(z_{\gamma})} + \frac{1}{\phi(z_{\alpha - \gamma})}.
+    \]
+    Pois \(z_{\gamma} = \Phi^{-1}(1-\gamma)\), então derivada \(-1/\phi(z_{\gamma})\); e \(z_{\alpha - \gamma} = \Phi^{-1}(1-\alpha+\gamma)\), derivada \(1/\phi(z_{\alpha - \gamma})\).
+    
+    \item A condição de mínimo é \(f'(\gamma)=0\):
+    \[
+    \frac{1}{\phi(z_{\alpha - \gamma})} = \frac{1}{\phi(z_{\gamma})} 
+    \;\Rightarrow\; 
+    \phi(z_{\gamma}) = \phi(z_{\alpha - \gamma}).
+    \]
+    
+    Como \(\phi\) é a densidade normal padrão, simétrica em torno de zero, isso implica:
+    \[
+    z_{\gamma} = z_{\alpha - \gamma}.
+    \]
+    O que só ocorre quando:
+    \[
+    \gamma = \alpha - \gamma \;\Rightarrow\; \gamma = \frac{\alpha}{2}.
+    \]
+    
+    \item Logo, o intervalo simétrico (quando \(\gamma=\alpha/2\)) é o que minimiza a amplitude \(w\).
+\end{enumerate}
+
+\quest{62}
+
+\begin{enumerate}
+    \item[a.] Temos uma amostra de tamanho \(n=10\) de uma distribuição exponencial com parâmetro \(\lambda\):
+    \[
+    x_1=41,53,\; x_2=18,73,\; x_3=2,99,\; x_4=30,34,\; x_5=12,33,\; 
+    x_6=117,52,\; x_7=73,02,\; x_8=223,63,\; x_9=4,00,\; x_{10}=26,78.
+    \]
+    
+    Somatório:
+    \[
+    \sum_{i=1}^{10} x_i = 550,87.
+    \]
+    
+    Para a distribuição exponencial, o estimador de \(\lambda\) é:
+    \[
+    \hat{\lambda} = \frac{1}{\bar{x}} = \frac{n}{\sum x_i}.
+    \]
+    
+    O limite de confiança inferior de 95\% para \(\lambda\) é dado por:
+    \[
+    \left( \frac{2n}{\chi^2_{2n,\,0.95}} , +\infty \right).
+    \]
+    
+    Para \(2n=20\), da tabela \(\chi^2_{20;0.95} \approx 31,41\):
+    \[
+    \text{Limite inferior} = \frac{2 \cdot 10}{31,41 \cdot \bar{x}}.
+    \]
+    
+    Como \(\bar{x} = 550,87/10 = 55,087\):
+    \[
+    = \frac{20}{31,41 \cdot 55,087} 
+    = \frac{20}{1728,70} 
+    \approx 0,01156.
+    \]
+    
+    Logo, o limite inferior de 95\% para \(\lambda\) é aproximadamente \(0,0116\).
+    
+    ---
+    
+    \item[b.] Queremos o limite inferior de 95\% para:
+    \[
+    P(X>100) = e^{-\lambda \cdot 100}.
+    \]
+    
+    Substituindo o limite inferior de \(\lambda\):
+    \[
+    e^{-0,0116 \cdot 100} = e^{-1,16} \approx 0,313.
+    \]
+    
+    Portanto, o limite inferior de 95\% para a probabilidade de o tempo de quebra exceder 100 minutos é aproximadamente \(0,313\).
+\end{enumerate}
+
+
+
+
 \section{Cap. 8 - Exercícios complementares}
 
+Portanto, o menor intervalo de confiança (mais curto) ocorre exatamente quando ele é simétrico em torno de \(\overline{x}\).
 
 \quest{61}
 
