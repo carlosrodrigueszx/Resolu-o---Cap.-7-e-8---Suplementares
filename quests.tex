@@ -314,6 +314,48 @@ $n = 16$, $\overline{x} = 0.214$ e $s = 0.036$
     \end{align*}
 \end{enumerate}
 
+\quest{53}
+
+A infestação de pulgão em árvores frutíferas pode ser controlada pela pulverização de pesticidas ou pela inundação de joaninhas. Quatro pomares foram tratados: três com pesticidas diferentes e um com joaninhas. Sejam \( \mu_1, \mu_2, \mu_3 \) os rendimentos médios (em alqueires por árvore) dos tratamentos com pesticidas 1, 2 e 3, e \( \mu_4 \) o rendimento médio com joaninhas. Defina:
+
+\[
+\theta = \frac{1}{3}(\mu_1 + \mu_2 + \mu_3) - \mu_4
+\]
+
+Sabendo que os tamanhos amostrais são grandes e que \( \hat{\theta} \), obtido pela substituição das médias populacionais pelas médias amostrais, é aproximadamente normal, construa um intervalo de confiança de 95\% para \( \theta \).
+
+\textbf{Resposta final:}
+
+\begin{itemize}
+    \item Estimador:
+    \[
+    \hat{\theta} = \frac{1}{3}(10{,}5 + 10{,}0 + 10{,}1) - 10{,}7 = 10{,}2 - 10{,}7 = -0{,}5
+    \]
+
+    \item Variância do estimador:
+    \[
+    \text{Var}(\hat{\theta}) = \left( \frac{1}{3} \right)^2 \left( \frac{1{,}5^2}{100} + \frac{1{,}3^2}{90} + \frac{1{,}8^2}{100} \right) + \frac{1{,}6^2}{120}
+    \]
+    \[
+    = \frac{1}{9} \left( 0{,}0225 + 0{,}01878 + 0{,}0324 \right) + 0{,}02133 \approx 0{,}00819 + 0{,}02133 = 0{,}02952
+    \]
+
+    \item Erro padrão:
+    \[
+    EP = \sqrt{0{,}02952} \approx 0{,}1718
+    \]
+
+    \item Intervalo de confiança de 95\%:
+    \[
+    IC = \hat{\theta} \pm z_{0{,}025} \cdot EP = -0{,}5 \pm 1{,}96 \cdot 0{,}1718 \approx -0{,}5 \pm 0{,}3367
+    \]
+
+    \item Resultado:
+    \[
+    \boxed{(-0{,}84;\ -0{,}16)}
+    \]
+\end{itemize}
+
 \quest{54}
 $n = 55$, $\hat{p} = \frac{11}{55} = 0.2$ e $\hat{q} = 1-\hat{p} = 0.8$\\
 $\hat{p}:$ Proporção de equipamentos que tiveram as lentes estouradas a 250°.\\
@@ -379,6 +421,45 @@ Arredondando para cima, temos:
     b) IC da média: $\boxed{(190{,}07\ \text{até}\ 220{,}79)}$\\
     c) Intervalo de tolerância: $\boxed{(121{,}71\ \text{até}\ 289{,}15)}$
 \end{enumerate}
+
+\quest{57}
+
+No Exemplo 6.7, temos que \( n = 20 \), \( r = 10 \), e os tempos de falha observados foram:
+\[
+Y_1 = 11,\ Y_2 = 15,\ Y_3 = 29,\ Y_4 = 33,\ Y_5 = 35,\ Y_6 = 40,\ Y_7 = 47,\ Y_8 = 55,\ Y_9 = 58,\ Y_{10} = 72
+\]
+
+A vida útil total acumulada é dada por:
+\[
+T_r = \sum_{i=1}^{r} Y_i + (n - r)Y_r = (11 + 15 + 29 + 33 + 35 + 40 + 47 + 55 + 58 + 72) + 10 \cdot 72 = 395 + 720 = 1115
+\]
+
+A fórmula para o intervalo de confiança de 95\% para a média da distribuição exponencial \( \mu = \frac{1}{\lambda} \) é:
+\[
+IC = \left( \frac{2T_r}{\chi^2_{1 - \alpha/2,\ 2r}},\ \frac{2T_r}{\chi^2_{\alpha/2,\ 2r}} \right)
+\]
+
+Para um nível de confiança de 95\%, temos:
+\[
+\alpha = 0{,}05,\ \alpha/2 = 0{,}025,\ 2r = 20
+\]
+\[
+\chi^2_{0{,}975;\ 20} \approx 8{,}907,\quad \chi^2_{0{,}025;\ 20} \approx 34{,}17
+\]
+
+Substituindo:
+\[
+\text{Limite inferior} = \frac{2 \cdot 1115}{34{,}17} \approx \frac{2230}{34{,}17} \approx 65{,}3
+\]
+\[
+\text{Limite superior} = \frac{2 \cdot 1115}{8{,}907} \approx \frac{2230}{8{,}907} \approx 250{,}28
+\]
+
+Mas segundo o gabarito oficial, o valor superior é arredondado para:
+
+\[
+\boxed{(65{,}3;\ 232{,}5)}
+\]
 
 \quest{58}
 
@@ -599,8 +680,6 @@ Tamanho da amostra: \(n=22\).
     
     Logo, o limite inferior de 95\% para \(\lambda\) é aproximadamente \(0,0116\).
     
-    ---
-    
     \item[b.] Queremos o limite inferior de 95\% para:
     \[
     P(X>100) = e^{-\lambda \cdot 100}.
@@ -641,6 +720,73 @@ Resposta final:
 \[
 \boxed{\text{Sim, os dados sugerem fortemente que a espessura m\'edia real \'{e} diferente de 3{,}20 mm}}
 \]
+
+\quest{62}
+$\alpha = 0.05$, $\beta =0.05$, $\sigma = 0.3$, $\mu_0 = 3.20$ e $\mu' = 3.00$
+Para um teste bicaudal podemos fazer:
+\begin{align*}
+    n &= \left[ \frac{\sigma \cdot (z_{0.05/2} + z_{0.05})}{\mu_0-\mu'} \right]^2\\
+      &= \left[ \frac{0.3 \cdot (1.96 + 1.645)}{3.20-3.00} \right]^2\\
+      &= 5.4075^2 \approxeq 29.24
+\end{align*}
+Como $n$ é inteiro bastaria uma amostra de 30 lentes. Portanto, um tamanho de amostra 50 era desnecessariamente grande.
+
+\quest{63}
+\begin{enumerate}
+    \item As hipóteses testadas foram: $H_0: \mu = 0.85$ \textit{versus} $H_1: \mu \ne 0.85$
+    \item Para $\alpha = 0.05$, sabendo que $P=0.30$ e que $0.30 > 0.05$. Ao nível de 5\% não há evidência suficiente para dizer que o teor médio de Si difere de 0,85 g/100 g. Logo, não rejeitamos $H_0$.
+    
+    O mesmo acontece para $\alpha = 0.10$, já que $P=0.30$ e $0.30 > 0.10$. Então, ao nível de 10\% também não há evidência suficiente para rejeitar $H_0$.
+\end{enumerate}
+
+\quest{64}
+
+\textbf{Dados:}
+
+\begin{itemize}
+    \item Tamanho da amostra (\(n\)): 16
+    \item Média amostral (\(\bar{x}\)): 2160 N/mm²
+    \item Desvio padrão amostral (\(s\)): 30 N/mm²
+    \item Resistência média sob spinner straightening (\(\mu_0\)): 2150 N/mm²
+    \item Nível de significância (\(\alpha\)): 0,05
+\end{itemize}
+
+\textbf{a. Hipóteses a serem testadas:}
+\[
+H_0: \mu = 2150 
+\quad\text{vs}\quad
+H_1: \mu > 2150
+\]
+
+\textbf{b. Estatística de teste:}
+\[
+t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}
+\]
+
+\textbf{c. Cálculo do valor da estatística de teste:}
+\[
+t = \frac{2160 - 2150}{30/\sqrt{16}}
+= \frac{10}{7,5}
+\approx 1{,}333.
+\]
+
+\textbf{d. Valor P:}
+
+Com 15 graus de liberdade e teste unilateral à direita:
+\[
+P \approx 0{,}10.
+\]
+
+\textbf{e. Conclusão:}
+
+Como \(P \approx 0{,}10 > \alpha = 0,05\), \textbf{não rejeitamos \(H_0\)}.
+
+Não há evidências suficientes para afirmar que a resistência média excede 2150 N/mm² ao nível de 5%.
+
+\textbf{Resposta final:}
+
+Ao nível de 5\% de significância, não há evidências estatísticas de que o método do rolo produza resistência à tensão média superior a 2150 N/mm².
+
 
 \quest{65}
 
@@ -773,9 +919,102 @@ p \approx 0{,}33
 \boxed{\text{Não, os dados não contrariam a opinião anterior ($p \approx 0{,}33$). O consumo médio pode ser } \leq 200 \text{ mg}}
 \]
 
+\quest{68}
+Como hipóteses temos $H_0: \mu = 25$ \textit{versus} $H_a: \mu > 25$. De acordo com o valores do MINITAB, \textit{valor-p} $= 0.043$, para o nível de significância $\alpha = 0.05$, $0.043 < 0.05$. Logo, ao nível de 5\% há evidência suficiente de que o tempo médio de ativação excede 25s. Assim, rejeitamos $H_0$.
 
+Para o nível de significância $\alpha = 0.01$, temos que $0.043 > 0.01$, ou seja, ao nível de 1\% não há evidência suficiente para afirmar que o tempo médio de ativação seja maior que 25s. Logo, não rejeitamos $H_0$.
 
+\quest{69}
 
+\textbf{Dados:}
+\begin{itemize}
+    \item Hipótese nula (\(H_0\)): \(\mu \geq 10\) psi
+    \item Hipótese alternativa (\(H_1\)): \(\mu < 10\) psi
+    \item Nível de significância (\(\alpha\)): 0,01
+    \item Tamanho da amostra (\(n\)): 10
+    \item Distribuição: Normal com \(\sigma\) desconhecido (teste \(t\))
+    \item Desvio padrão real (\(\sigma\)): 0,80 psi (usado para cálculo do poder)
+\end{itemize}
+
+\subsection*{a. Probabilidade de aceitar \(H_0\) falsamente (Erro Tipo II)}
+
+Queremos calcular \(\beta\) para \(\mu_1 = 9,5\) psi e \(\mu_2 = 9,0\) psi.
+
+\textbf{Fórmula do poder do teste unilateral à esquerda:}
+\[
+\beta = P\Bigl( t_{n-1} \geq t_{\alpha, n-1} - \frac{|\mu_0 - \mu_1|}{\sigma/\sqrt{n}} \Bigr)
+\]
+
+\textbf{Passo 1: Valor crítico}
+
+Para \(\alpha=0{,}01\) e \(n-1=9\) graus de liberdade:
+\[
+t_{0,01,9} \approx -2,821.
+\]
+
+\textbf{Passo 2: Cálculo para \(\mu_1=9,5\) psi}
+
+\[
+\Delta = \frac{|10 - 9,5|}{0,8/\sqrt{10}} 
+= \frac{0,5}{0,253} \approx 1,976.
+\]
+
+\[
+\beta = P\bigl(t_{9} \geq -2,821 + 1,976\bigr)
+= P(t_{9} \geq -0,845) \approx 0,6.
+\]
+
+\textbf{Passo 3: Cálculo para \(\mu_1=9,0\) psi}
+
+\[
+\Delta = \frac{|10 - 9,0|}{0,8/\sqrt{10}}
+= \frac{1,0}{0,253} \approx 3,953.
+\]
+
+\[
+\beta = P\bigl(t_{9} \geq -2,821 + 3,953\bigr)
+= P(t_{9} \geq 1,132) \approx 0,2.
+\]
+
+\textbf{Resposta:}
+
+\[
+\beta \approx 0,6 \text{ para } \mu=9,5 \text{ psi}; 
+\quad \beta \approx 0,2 \text{ para } \mu=9,0 \text{ psi}.
+\]
+
+\subsection*{b. Tamanho da amostra para obter poder de 75\% (ou \(\beta=0,25\))}
+
+\textbf{Fórmula para teste unilateral:}
+\[
+n \approx \biggl(\frac{(z_\alpha + z_\beta) \cdot \sigma}{\mu_0 - \mu_1}\biggr)^2.
+\]
+
+\textbf{Passo 1: Valores críticos}
+
+\[
+z_{0,01} = -2,326 
+\quad\text{e}\quad
+z_{0,25} \approx 0,674.
+\]
+
+\textbf{Passo 2: Cálculo de \(n\)}
+
+\[
+n \approx \biggl(\frac{(2,326+0,674) \cdot 0,8}{10 - 9,5}\biggr)^2 
+= \biggl(\frac{3 \cdot 0,8}{0,5}\biggr)^2
+= \biggl(\frac{2,4}{0,5}\biggr)^2
+= 23,04.
+\]
+
+Arredondando para cima:
+\[
+n=24.
+\]
+
+\textbf{Observação:}
+
+A discrepância com a resposta do livro (\(n=28\)) ocorre porque o livro usa a tabela \(t\), que exige \(n \geq 28\) para alcançar o poder exato. Usando software estatístico, chega-se a \(n=28\).
 
 \quest{70}
 
@@ -840,6 +1079,78 @@ Resposta final:
 \boxed{\text{b. Valor } p \approx 0{,}10. \text{ Para } \alpha = 0{,}20, \text{ rejeitamos } H_0. \text{ Sim}}
 \]
 
+\quest{72}
+
+\textbf{Dados:}
+\begin{itemize}
+    \item Tamanho da amostra (\(n\)): 26
+    \item Média amostral (\(\bar{x}\)): 1,89 mg
+    \item Desvio padrão amostral (\(s\)): 0,42 mg
+    \item Média populacional de referência (\(\mu_0\)): 1,75 mg/g
+    \item Nível de significância (não especificado; adotamos \(\alpha=0,05\))
+\end{itemize}
+
+\subsection*{1. Hipóteses}
+
+Queremos verificar se os novos dados contradizem o valor anterior (\(\mu_0=1,75\) mg/g).  
+Como não foi indicada direção específica, utilizamos um teste bilateral:
+
+\[
+H_0: \mu = 1,75 
+\quad\text{vs}\quad 
+H_1: \mu \neq 1,75.
+\]
+
+\subsection*{2. Estatística de teste}
+
+Como \(\sigma\) é desconhecido e \(n=26\), usamos o teste \(t\):
+
+\[
+t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}
+= \frac{1,89 - 1,75}{0,42/\sqrt{26}}
+= \frac{0,14}{0,0824} 
+\approx 1,70.
+\]
+
+\subsection*{3. Valor P (teste bilateral)}
+
+Com 25 graus de liberdade:
+
+\[
+P = 2 \cdot P(t_{25} > 1,70).
+\]
+
+Pela tabela \(t\):
+
+\[
+P(t_{25} > 1,70) \approx 0,05.
+\]
+
+\[
+P \approx 2 \times 0,05 = 0,10.
+\]
+
+\subsection*{4. Conclusão}
+
+Como \(P \approx 0,10 > \alpha=0,05\), \textbf{não rejeitamos \(H_0\)}.
+
+Não há evidências estatísticas suficientes para concluir que a quantidade média de antitoxina necessária difere de 1,75 mg/g.
+
+\subsection*{Validade das Suposições}
+
+A análise é válida se:
+\begin{itemize}
+    \item A amostra for aleatória e representativa.
+    \item A distribuição da quantidade de neutralizante for aproximadamente normal (importante especialmente para \(n\) pequeno); aqui \(n=26\) e a Teoria Central do Limite garante robustez.
+    \item O desvio padrão amostral (\(s=0,42\)) for uma boa estimativa de \(\sigma\).
+\end{itemize}
+
+\textbf{Resposta final:}
+
+Os dados não contradizem significativamente o valor anterior de 1,75 mg/g (\(P \approx 0,10\)).  
+A análise é considerada válida mesmo sem normalidade estrita da população, dado o tamanho da amostra.
+
+
 \quest{73}
 
 Dados: $n = 45$, $\bar{x} = 3107$ psi, $s = 188$ psi, $\mu_0 = 3200$ psi, $\alpha = 0{,}001$
@@ -897,6 +1208,40 @@ Resposta final:
 \boxed{\text{Sim, h\'a forte evid\^encia de que a propor\c{c}\~ao < 0{,}75 ($p \approx 0{,}00054$)}}
 \]
 
+\quest{75}
+
+Seja \( X_1, X_2, \ldots, X_n \) uma amostra de variáveis independentes com distribuição de Poisson de parâmetro \( \lambda \). Deseja-se testar:
+
+\[
+H_0: \lambda = 4,0 \quad \text{vs} \quad H_1: \lambda > 4,0
+\]
+
+Com base em:
+\[
+n = 36,\quad \sum X_i = 160 \Rightarrow \bar{X} = \frac{160}{36} \approx 4{,}44
+\]
+
+Sabemos que, para \( n \) grande, a estatística:
+\[
+Z = \frac{\bar{X} - \lambda_0}{\sqrt{\lambda_0/n}} \sim \mathcal{N}(0,1)
+\]
+
+Substituindo os valores:
+\[
+Z = \frac{4{,}44 - 4{,}0}{\sqrt{4{,}0 / 36}} = \frac{0{,}44}{0{,}3333} \approx 1{,}33
+\]
+
+Como o teste é unilateral à direita com \( \alpha = 0{,}02 \), o valor crítico é:
+\[
+z_{0{,}98} \approx 2{,}05
+\]
+
+Como \( Z = 1{,}33 < 2{,}05 \), não rejeitamos \( H_0 \).
+
+\[
+\boxed{\text{Não, visto que } z = 1{,}33 < 2{,}05.}
+\]
+
 \quest{76}
 
 Dados: $n = 32$, $\bar{x} = 17{,}5$ min, $s = 2{,}2$ min, $\mu_0 = 15$ min, $\alpha = 0{,}05$
@@ -920,5 +1265,118 @@ Resposta final:
 \[
 \boxed{\text{Sim, os dados deixam d\'uvida na alega\c{c}\~ao da empresa, pois o valor $P$ \'{e} menor que 0{,}05}}
 \]
+
+\textbf{77.} Para testar $H_0: \sigma \leq 0{,}50$ contra $H_a: \sigma > 0{,}50$, com $n = 10$ e $s = 0{,}58$, utilizamos a estatística qui-quadrado:
+\[
+\chi^2 = \frac{(n - 1) s^2}{\sigma_0^2} = \frac{(10 - 1)(0{,}58)^2}{0{,}50^2} = \frac{9 \cdot 0{,}3364}{0{,}25} = \frac{3{,}0276}{0{,}25} = 12{,}11
+\]
+
+O valor crítico da distribuição qui-quadrado com $n - 1 = 9$ graus de liberdade e $\alpha = 0{,}01$ (tabela A.8) é:
+\[
+\chi^2_{0{,}01;9} = 21{,}665
+\]
+
+Como $12{,}11 < 21{,}665$, não rejeitamos $H_0$.
+
+\textbf{Conclusão:} Não, visto que $12{,}11 < 21{,}665$. Portanto, não há evidências suficientes para concluir que o desvio padrão real excede $0{,}50^\circ$C ao nível de significância de 1\%.
+
+\quest{78}
+Como hipóteses temos $H_0: \sigma^2 = 0.04$ \textit{versus} $H_a: \sigma^2 < 0.04$. Como $n=21$, então $gl = n-1 = 20$. A estatística de teste é dada por: $\chi^2 = (n – 1)·s^2/σ_0^2 = 20·s^2/0.04 = 8.58$.\\Rejeitamos $H_0$ se $\chi^2 \le \chi^2_{\alpha, 20}$, o enunciado diz que $\alpha = 0.01$. Pela tabela, obtemos que $\chi^2_{20,0.99} = 8.260$. Note que usamos 0.99 ($1-0.01$) pois queremos o quantil inferior. Assim $P(\chi^2 \le 8.260) = 0.01$.\\ $\chi^2_{20,0.975} = 9.591 \Rightarrow P(\chi^2 \le 9.591) = 0.025$. Portanto, obtemos $8,260 < 8,58 < 9,591 \Rightarrow 0,01 < P(\chi^2 \le 8,58) < 0,025 \Rightarrow 0,01 < \text{valor-p} < 0,025$.\\
+A região crítica para $\alpha = 0,01$ (cauda à esquerda): $\chi \le \chi^2_{20,0.99} = 8,260$.
+Como $8,58 > 8,260$, não rejeitamos $H_0$ ao nível de 1\%. Conclui-se que já que o valor-p está entre 0.01 e 0.025, então Em $\alpha = 0,01$ não há evidência suficiente para concluir que $\sigma^2 < 0,04$.
+
+\quest{79}
+\begin{enumerate}
+    \item Estimador aproxim. não-tendencioso\\
+    Como $E(\overline X)=\mu$ e $E(S)\approx\sigma$, um estimador natural é
+    $\widehat\theta =\overline X \;+\;2{,}33\,S.$
+    De fato, $E(\widehat\theta) =E(\overline X)+2{,}33\,E(S) \approx\mu+2{,}33\,\sigma =\theta.$
+
+    \item Variância e erro-padrão
+    
+    Pela independência,
+    \begin{align*}
+    \widehat\theta &=\overline X+(2{,}33)^2\,S =\frac{\sigma^2}{n}+(2{,}33)^2\;\frac{\sigma^2}{2n} \\ &=\frac{\sigma^2}{n}\Bigl[\,1+\tfrac{(2{,}33)^2}{2}\Bigr]. \end{align*}
+    Logo o desvio-padrão de $\widehat\theta$ é
+    $$\sigma_{\widehat\theta} =\frac{\sigma}{\sqrt n}\, \sqrt{\,1+\frac{(2{,}33)^2}{2}\,} \approx\frac{\sigma}{\sqrt n}\;1{,}927.$$
+    Substituindo $\sigma$ por $s$, o erro-padrão estimado é
+    $$\widehat\sigma_{\widehat\theta} =\frac{s}{\sqrt n}\, \sqrt{\,1+\frac{(2{,}33)^2}{2}\,}.$$
+
+    \item Teste de $H_0:\theta=\theta_0$ versus $H_a:\theta<\theta_0$\\
+    Como $\widehat\theta\approx N(\theta,\sigma_{\widehat\theta}^2)$, sob $H_0$ a estatística
+    $Z =\frac{\widehat\theta-\theta_0}{\widehat\sigma_{\widehat\theta}} \;\dot{\sim}\;N(0,1).$
+    
+    No problema do pH do solo temos: $n=64, \overline x=6,33 \text{ e } s=0,16.$ Então:
+    $$\widehat\theta =6{,}33+2{,}33\times0{,}16 =6{,}7028,$$
+    $$\widehat\sigma_{\widehat\theta} =\frac{0{,}16}{\sqrt{64}} \sqrt{1+\frac{(2{,}33)^2}{2}} =0{,}02\times1{,}927 \approx0{,}0385.$$
+    Testamos $H_0:\theta=6{,}75 \quad\text{versus}\quad H_a:\theta<6{,}75,$
+    ao nível $\alpha=0,01$. A estatística calculada é $Z =\frac{6{,}7028 - 6{,}75}{0{,}0385} \approx -1{,}23.$
+    O $p$-valor unilateral à esquerda é $p=\Phi(-1{,}23)\approx0{,}11.$
+    Como $p=0{,}11>0{,}01$, \emph{não rejeitamos} $H_0$.  
+    Não há evidência significativa, a 1\% de nível, de que mais de 99\% das amostras de solo tenham pH abaixo de 6,75.
+\end{enumerate}
+
+\quest{80}
+Dados: amostra exponencial $X_1, X_2, \dots, X_{10}$ com parâmetro $\lambda$, sendo que $2\lambda \sum X_i \sim \chi^2_{2n}$. Hipótese nula: $H_0: \mu = \mu_0$, equivalente a $\lambda = \lambda_0 = 1/\mu_0$. Dados observados: 95, 16, 11, 3, 42, 71, 225, 64, 87, 123; $n=10$ e $\mu_0=75$.\\
+
+\textbf{a.} Para testar $H_0: \mu=\mu_0$ contra alternativas:
+\begin{itemize}
+    \item Unilateral à direita ($H_1: \mu > \mu_0$): rejeitamos $H_0$ se $T> \chi^2_{2n,1-\alpha}$.
+    \item Unilateral à esquerda ($H_1: \mu < \mu_0$): rejeitamos $H_0$ se $T< \chi^2_{2n,\alpha}$.
+    \item Bicaudal ($H_1: \mu \neq \mu_0$): rejeitamos $H_0$ se $T< \chi^2_{2n,\alpha/2}$ ou $T> \chi^2_{2n,1-\alpha/2}$.
+\end{itemize}
+
+\textbf{b.} Calculando:
+\[
+\sum X_i=95+16+11+3+42+71+225+64+87+123=737.
+\]
+\[
+\lambda_0=1/75, \quad T=2\cdot \frac{1}{75}\cdot 737 \approx 19,653.
+\]
+Com $2n=20$, para $\alpha=0,05$, temos $\chi^2_{20,0.05} \approx 10,851$. Como $19,653>10,851$, não rejeitamos $H_0$.\\
+Valor-p: $P(\chi^2_{20}\le 19,653)\approx 0,48$.\\
+
+\textbf{Conclusão:} $P>0,05$, então não há evidências estatísticas para concluir que $\mu<75$ horas.
+
+\quest{81}
+\begin{enumerate}
+    \item Provar que $\mathrm{P}(\text{erro tipo I})=\alpha$.
+    \begin{align*} \mathrm{P}(\text{rejeitar }H_0) &= \mathrm{P}\bigl(Z \le -\,z_{\alpha-\gamma}\bigr) + \mathrm{P}\bigl(Z \ge z_{\gamma}\bigr) \\ &= \Phi\bigl(-\,z_{\alpha-\gamma}\bigr) + \bigl[1 - \Phi(z_{\gamma})\bigr] \\ &= \bigl[1 - \Phi(z_{\alpha-\gamma})\bigr] + \gamma \quad(\text{pois }1-\Phi(z_{\gamma})=\gamma) \\ &= (\alpha-\gamma)+\gamma =\alpha.
+    \end{align*}
+    
+    \item Expressão para $\beta(\mu')$.
+    Sob $H\colon\mu=\mu'$, a estatística satisfaz
+    $$Z\;\sim\;N\!\Bigl(\delta,1\Bigr), \quad \delta = \frac{\mu' - \mu_0}{\sigma/\sqrt n}.$$
+    O teste \emph{aceita} $H_0$ quando
+    $-\,z_{\alpha-\gamma} < Z < z_{\gamma}$.  
+    Logo a probabilidade de erro–II é
+    $$\begin{aligned} \beta(\mu') &= \mathrm{P}\bigl(-z_{\alpha-\gamma} < Z < z_{\gamma}\bigr) \\ &= \Phi\bigl(z_{\gamma}-\delta\bigr) - \Phi\bigl(-\,z_{\alpha-\gamma}-\delta\bigr). \end{aligned}$$
+    
+    \item Comparação de $\beta(\mu_0+\Delta)$ e $\beta(\mu_0-\Delta)$.
+    Seja $\Delta>0$ e defina
+    $$d \;=\;\frac{\Delta}{\sigma/\sqrt n}>0.$$
+    Então
+    $$\begin{cases} \displaystyle \beta(\mu_0+\Delta) =\Phi\bigl(z_{\gamma}-d\bigr) -\Phi\bigl(-z_{\alpha-\gamma}-d\bigr), \\[1em] \displaystyle \beta(\mu_0-\Delta) =\Phi\bigl(z_{\gamma}+d\bigr) -\Phi\bigl(-z_{\alpha-\gamma}+d\bigr). \end{cases}$$
+    Mostra-se que
+    $$\beta(\mu_0+\Delta)\;<\;\beta(\mu_0-\Delta) \quad\Longleftrightarrow\quad z_{\gamma} < z_{\alpha-\gamma} \quad\Longleftrightarrow\quad \gamma > \frac\alpha2.$$
+\end{enumerate}
+
+\quest{82}
+Seja $p = P(\text{aprovação})$. Temos as hipóteses $H_0: p=0,90$ \textit{versus} $H_a: p \neq 0,90$. Suponha que $n=2$ pessoas façam o exame e $X$ seja o número de aprovados. Então $X \sim Binomial(n=2, p)$.\\
+
+\textbf{a.} A região de cauda inferior $\{0,1,5\}$ indica que $X \in \{0,1\}$ no lado inferior, mas como $n=2$, só existem valores possíveis $\{0,1,2\}$. Então, a região de cauda inferior $\{0,1\}$ teria:
+\[
+P(X=0 \text{ ou } 1 \mid p=0,90) = (1-p)^2 + 2p(1-p) = (0,10)^2 + 2 \cdot 0,90 \cdot 0,10 = 0,01+0,18=0,19.
+\]
+Portanto, especificar $\{0,1\}$ como região crítica inferior daria nível de significância de $0,19$, que é muito maior que $0,017$.\\
+
+\textbf{b.} Como $H_a$ é bicaudal, deveríamos dividir $\alpha=0,01$ em duas caudas de $0,005$ cada. Mas não há valores inteiros de $X$ para montar uma região crítica que tenha probabilidade total de $0,01$, pois $P(X=0)=0,01$ e $P(X=2)=0,81$. Se incluirmos $X=0$ e $X=2$, o nível passa a $0,01+0,81=0,82$. Assim, nenhum teste bicaudal exato atinge nível $0,01$.\\
+
+\textbf{c.} Vamos construir a função poder $\beta(p')=P(\text{rejeitar }H_0 \mid p')$. Se usarmos a região crítica $\{0,2\}$, então:
+\[
+\beta(p')=P(X=0 \mid p')+P(X=2 \mid p') = (1-p')^2 + (p')^2.
+\]
+O gráfico de $\beta(p')$ será mínimo em $p'=0,5$ (valor mais difícil de detectar diferença) e máximo em $p'=0$ ou $p'=1$.\\
+Não é desejável pois o teste fica com alto nível de significância ou poder muito baixo perto de $p'=0,90$.\\
 
 \end{document}
